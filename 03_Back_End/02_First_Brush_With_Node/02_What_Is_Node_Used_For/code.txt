@@ -1,0 +1,12 @@
+1) What do people build with Node?
+    A) Web servers
+    B) Command Line Tools
+    C) Native Apps (VSCode is a Node app)
+    D) Video Games
+        i) CrossCode 
+    E) Drone Software
+    F) A Whole Lot More
+2) Who uses Node
+    A) Netflix
+    B) NASA
+    C)Uber

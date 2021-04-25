@@ -1,0 +1,6 @@
+1) Syntax
+    A)SELECT <columns> FROM <table> WHERE <column> BETWEEN <lesser value> AND <greater value>;
+2) Examples
+    A)SELECT * FROM movies WHERE release_year BETWEEN 2000 AND 2010;
+    B)SELECT name, description FROM products WHERE price BETWEEN 9.99 AND 19.99;
+    C)SELECT name, appointment_date FROM appointments WHERE appointment_date BETWEEN "2015-01-01" AND "2015-01-07";

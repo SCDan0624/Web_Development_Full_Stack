@@ -1,0 +1,10 @@
+1. Man
+      A) gives information about a command
+         i) man ls
+            a) Will give info about ls command
+
+2. Flags
+   A) Command that you can pass into another command
+   B) Will be shown as -letter
+      i) ls -S
+         a) sort files by size

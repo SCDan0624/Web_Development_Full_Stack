@@ -1,0 +1,6 @@
+I) NPM is really two things
+    1) A library of thousands of packages published 
+    by other developers that we can use for free
+
+    2) A command line tool to easily install 
+    and manage those packages in our Node projects

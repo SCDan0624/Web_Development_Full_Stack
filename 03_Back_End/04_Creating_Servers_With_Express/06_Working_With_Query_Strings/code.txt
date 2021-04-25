@@ -1,0 +1,14 @@
+I) What is a query string?
+    1) A portion of the URL that comes after a ?
+    2) Can include information in key value pairs as part of the query
+    string.
+
+II) Added to index.js
+    1)
+    app.get("/search", (req, res) => {
+    const { q } = req.query;
+    res.send(`<h1>Search results for: ${q}</h1>`);
+});
+
+    2) Go to localhost3000/search?q=dog
+        A) Search results for: dog 

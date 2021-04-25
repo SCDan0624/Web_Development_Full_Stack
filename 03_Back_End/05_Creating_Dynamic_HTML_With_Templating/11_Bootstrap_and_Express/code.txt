@@ -1,0 +1,63 @@
+I) Pre-Project steps
+    1) Change folder name from templating_demo to bootstrap_demo
+    2) Delete public folder
+    3) Download bootstrap compiled CSS and JS
+    4) npm i ejs
+    5) mkdir public (in bootstrap_demo)
+    6) mkdir public/css public/js
+    7) Unzip downloaded bootstrap
+    8) Put bootstrap.min.css and bootstrap.min.js in your css and js folders
+
+II) subreddit.ejs
+    1) Change link to:
+
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    2) Change script to 
+
+<script src="/js/bootstrap.min.js"></script>
+
+    3) Add script above bootstrap:
+
+
+
+III) jquery
+    1) Go to jquery website and download compressed jquery
+    2) Save page as jquery.js
+    3) Put in your jquery folder
+
+IV) bootstrap
+    1) Add Navbar
+        A) Go to bootstrap then click on components then navbar 
+        B) Copy navbar text
+
+V) subreddit.ejs
+    1) Add bootstrap navbar at the top of the body
+    2) Changes to navbar
+        A) Change navbar light to dark 
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+        B) Change name from navbat to express demo
+
+<a class="navbar-brand" href="#">Express Demo</a>
+
+        C) Change home link from # to / and remove active
+
+<a class="nav-link" aria-current="page" href="/">Home</a>
+
+        D)  Change pricing to chicken 
+
+<a class="nav-link" href="/r/chickens">Chickens</a>
+
+        E) Remove li class after chickens that includes a class nav-link disabled
+        F) Replace with another 2 chickens links
+        G) replace last two chickens with soccer and mighty harvest
+
+VI) subreddit.ejs cleanup
+    1) Add container below last nav and above h1 with browsing the 
+
+<div class="container">
+
+    2) end container right before closing body tag
+

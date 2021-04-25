@@ -1,0 +1,8 @@
+1)Syntax
+    A) SELECT <columns> FROM <table> WHERE <condition 1> AND <condition 2> ...;
+    B) SELECT <columns> FROM <table> WHERE <condition 1> OR <condition 2> ...;
+2) Examples
+    A)SELECT username FROM users WHERE last_name = "Chalkley" AND first_name = "Andrew";
+    B)SELECT * FROM products WHERE category = "Games Consoles" AND price < 400;
+    C)SELECT * FROM movies WHERE title = "The Matrix" OR title = "The Matrix Reloaded" OR title = "The Matrix Revolutions"
+    D)SELECT country FROM countries WHERE population < 1000000 OR population > 100000000;

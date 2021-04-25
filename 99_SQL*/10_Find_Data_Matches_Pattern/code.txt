@@ -1,0 +1,17 @@
+1) Syntax   
+    A)SELECT <columns> FROM <table> WHERE <column> LIKE <pattern>;
+2) Examples 
+    A)SELECT title FROM books WHERE title LIKE "Harry Potter%Fire";
+    B)SELECT title FROM movies WHERE title LIKE "Alien%";
+    C)SELECT * FROM contacts WHERE first_name LIKE "%drew";
+    D)SELECT * FROM books WHERE title LIKE "%Brief History%";
+3) (%)
+    A)Placing the percent symbol (%) any where in a string in conjunction 
+    with the LIKE keyword will operate as a wildcard.
+    B)Meaning it can be substituted by any number of characters, 
+    including zero!
+
+4)PostgreSQL Specific Keywords
+    A)LIKE in PostgreSQL is case-sensitive. To case-insensitive searches do ILIKE.
+5) Examples 
+    A)SELECT * FROM contacts WHERE first_name ILIKE "%drew";

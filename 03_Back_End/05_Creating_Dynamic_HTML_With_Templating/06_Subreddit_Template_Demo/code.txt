@@ -1,0 +1,15 @@
+I) Index.js
+    A) ADD:
+
+        app.get("/r/:subreddit", (req, res) => {
+        const { subreddit } = req.params;
+        res.render("subreddit", { subreddit });
+        });
+    
+II) Create subreddit.ejs to views folder
+    A) Add <%= subreddit %> to title
+    B) Add following to body:
+    
+    <h1>Browsing the <%= subreddit %> subreddit
+    </h1>
+

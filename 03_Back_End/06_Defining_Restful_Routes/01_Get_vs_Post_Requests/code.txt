@@ -1,0 +1,20 @@
+I) Get vs Post
+    1) Get  
+        A) Used to retrieve information
+        B) Data is sent via query stringformat
+        C) Information is plainly visible in the URL!
+        D) Limited amount of data can be sent
+    
+    2) Post
+        A) Used to post data to the sever
+        B) Used to write/create/update
+        C) Data is sent via request body, not a query string
+        D) Can send any sort of data (JSON)
+
+II) Example
+    1) getpost.html
+        A) Create this file
+        B) Add html skeleton
+        C) Add form with two input and button
+        D) Duplicate form and add below but change method from get to post
+

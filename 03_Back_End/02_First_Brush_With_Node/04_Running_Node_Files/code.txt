@@ -1,0 +1,4 @@
+1) Step by Step
+    A) touch firstscript.js
+        i) add a loop to file on VSCode
+    B) node firstscript.js

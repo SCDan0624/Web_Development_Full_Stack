@@ -1,0 +1,61 @@
+I) Partials (Includes in EJS)
+    1) Allows us to use templates on multiple pages
+    2) Example
+        A) Instead of copying our bootstrap and jquery
+        from our subreddit.ejs pages.
+
+II) subreddit.ejs
+    1) Cut everything above the body 
+    2) Create a new folder called partials inside your views
+
+III) Partials folder
+    1) Create a file called head.ejs in your partials folder
+    2) Paste your cut code from subreddit.ejs into your 
+    head.ejs file
+    3) Remove dynamic title from head.ejs
+
+IV) includes 
+    1) %- include ('partials/filename')%
+    2) Allows us to use our bootstrap and jquery from our partials page
+    in any other ejs by adding the above line
+
+
+V) subreddit.ejs
+    1) add
+
+<%- include('partials/head')%>
+
+VI) random.ejs
+    1) add 
+
+<%- include('partials/head')%>
+
+VII) home.ejs
+    1) add
+
+<%- include('partials/head')%>
+
+VIII) cats.ejs
+    1) add
+
+<%- include('partials/head')%>
+
+IX) notfound.ejs
+    1) add
+
+<%- include('partials/head')%>
+
+X) subreddit.ejs
+    1) cut navbar code 
+
+XI) partials folder
+    1) create a new file called navbar.ejs
+    2) paste cut navbar code into navbar.ejs
+
+XII) Add navbar to other pages
+    1) Add the following code to all pages in the views folder
+    2) Add right below body opening tag
+
+<%- include('partials/navbar')%>
+
+XIII) Footer from video not yet added

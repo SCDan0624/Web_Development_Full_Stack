@@ -1,0 +1,14 @@
+1) Retrieving a single column:
+    A) SELECT <column name> FROM <table name>; 
+2) Examples
+    A) SELECT email FROM users;
+    B)SELECT first_name FROM users;
+    C)SELECT name FROM products;
+    D)SELECT zip_code FROM addresses;
+3) Retrieving multiple columns:
+    A) SELECT <column name 1>, <column name 2>, ... FROM <table name>;
+4) Examples
+    A)SELECT first_name, last_name FROM customers;
+    B)SELECT name, description, price FROM products;
+    C)SELECT title, author, isbn, year_released FROM books;
+    D)SELECT name, species, legs FROM pets;

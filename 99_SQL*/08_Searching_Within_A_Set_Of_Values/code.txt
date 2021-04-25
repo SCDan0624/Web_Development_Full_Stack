@@ -1,0 +1,15 @@
+1) Syntax
+    A)SELECT <columns> FROM <table> WHERE <column> IN (<value 1>, <value 2>, ...);
+2) Examples
+    A)SELECT name FROM islands WHERE id IN (4, 8, 15, 16, 23, 42);
+    B)SELECT * FROM products WHERE category IN ("eBooks", "Books", "Comics");
+    C)SELECT title FROM courses WHERE topic IN ("JavaScript", "Databases", "CSS");
+    D)SELECT * FROM campaigns WHERE medium IN ("email", "blog", "ppc");
+3) NOT IN  
+    A) SELECT <columns> FROM <table> WHERE <column> IN (<value 1>, <value 2>, ...);
+4) Examples
+    A)SELECT answer FROM answers WHERE id IN (7, 42);
+    B)SELECT * FROM products WHERE category NOT IN ("Electronics");
+    C)SELECT title FROM courses WHERE topic NOT IN ("SQL", "NoSQL");
+5) When used
+    A) Instead of multiple OR/AND

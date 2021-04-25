@@ -1,0 +1,52 @@
+I) data.json page
+    1) Created a fake data page put in template_demo folder
+
+II) index.js
+    1) require data page
+
+    const redditData = require("./data.json");
+
+    2) Add the following line to our app.get("/r/:subreddit", (req, res) => {
+
+    const data = redditData[subreddit];
+    res.render("subreddit", { ...data });
+
+    3) This will allow us access to indivdual properties of the data.json page
+    such as name,subscribers,description, and posts
+
+III) subreddit.ejs
+    1) Add these two lines to the body
+
+    {% comment %} Simple EJS Interpolation {% endcomment %}
+
+    <h1>Browsing the <%= name %> subreddit</h1>
+    <h2><%= description %> </h2>
+    <p><%= subscripbers %> Total Subscribers </p>
+
+    {% comment %} EJS Loop with conditional: {% endcomment %}
+    
+    <hr>
+    <% for(let post of posts){ %>
+    <article>
+        <p><%= post.title %> -  <b><%= post.author %></b> </p>
+        <% if(post.img){ %> 
+            <img src="<%= post.img %> " alt="">
+        <% } %> 
+    </article>
+    <% } %>
+
+IV) Index.js again
+    1) Add following if/else to app.get
+
+        if (data) {
+            res.render("subreddit", { ...data });
+        } else {
+            res.render("notfound", { subreddit });
+        }
+
+    2) This will give an error message if user goes to a page 
+    that we don't have data for
+
+V) New page
+    1) Create a notfound.ejs page
+    2) See project page for what to code page with

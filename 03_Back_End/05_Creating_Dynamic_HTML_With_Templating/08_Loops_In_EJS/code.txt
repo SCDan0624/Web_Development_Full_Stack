@@ -1,0 +1,16 @@
+I) index.js
+    1) Add:
+
+        app.get("/cats", (req, res) => {
+        const cats = ["Blue", "Rocket", "Monty", "Steph", "Winston"];
+        res.render("cats", { cats });
+        });
+
+II) cats.ejs
+    1) touch cats.ejs
+    2) Add to body of file
+
+            <h1>All the Cats</h1>
+            <% for(let cat of cats){ %> 
+                <li><%= cat %></li>
+            <% } %>

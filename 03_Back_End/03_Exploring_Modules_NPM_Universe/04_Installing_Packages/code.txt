@@ -1,0 +1,11 @@
+ I) Jokes 
+1) Mkdir Jokester
+2) cd Jokester
+3) npm install give-me-a-joke
+    A) Normally node_modules will appear
+4) touch index.js
+    A) add proper require to page
+
+II) Colors
+    1) cd Jokester
+    2) npm install colors

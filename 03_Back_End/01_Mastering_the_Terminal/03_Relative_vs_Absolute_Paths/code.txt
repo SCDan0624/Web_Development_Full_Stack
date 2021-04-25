@@ -1,0 +1,12 @@
+1. Relative Path
+   A) Go to a folder that is relative to where you currently are
+2. Absolute Path
+   A) Very Specific path
+   B) Starts with /
+   C) Can be done from any folder
+      i) cd /Users/coltsteele
+3. Other
+   A) cd ~
+    i) Home directory
+   B) cd /
+    i) Root directory

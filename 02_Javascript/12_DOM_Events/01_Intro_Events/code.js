@@ -1,0 +1,11 @@
+/*
+Event examples
+    clicks
+    drags
+    double click
+    scrolls
+    form sumbmission
+    key presses
+    hover
+    and much more
+*/

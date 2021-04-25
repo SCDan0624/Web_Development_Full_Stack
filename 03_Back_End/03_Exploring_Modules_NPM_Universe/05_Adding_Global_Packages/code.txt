@@ -1,0 +1,4 @@
+1) When running npm install inside a folder that package is only available
+for that folder locally
+2) npm install -g <name> 
+    A) Will install globally

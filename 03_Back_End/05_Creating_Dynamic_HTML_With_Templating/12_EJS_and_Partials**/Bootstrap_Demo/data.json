@@ -1,0 +1,42 @@
+{
+    "soccer":{
+        "name":"Soccer",
+        "subscribers":800000,
+        "description":"The football subressit. News, results and discussion",
+        "posts":[
+            {
+                "title":"Marten de Roon to make pizza",
+                "author":"joextreme"
+            },
+            {
+                "title":"Stephan Lichsteiner",
+                "author":"odd person" 
+            },
+            {
+                "title":"OFFICIAL: Dani Paerjo signs for Villareal",
+                "author":"joextreme" 
+            }
+        ]
+    },
+    "chicken":{
+        "name":"Chickens",
+        "subscribers":23956,
+        "description":"A place to post chicken stuff",
+        "posts":[
+            {
+                "title":"Naughty shed chicken",
+                "author":"joextreme",
+                "img":"https://media.istockphoto.com/photos/poultry-roast-chicken-isolated-on-white-background-picture-id172916013?k=6&m=172916013&s=612x612&w=0&h=575hhrGzSl9LtKPS_B0BYgOA0SReiGezJhjK5aBJDPo="
+            },
+            {
+                "title":"Had to kill chicken",
+                "author":"sad person" 
+            },
+            {
+                "title":"My 5 yr old chicken hatched a baby",
+                "author":"tammythetiger",
+                "img":"https://assets.newatlas.com/dims4/default/7eebd43/2147483647/strip/true/crop/735x490+3+0/resize/1200x800!/quality/90/?url=http%3A%2F%2Fnewatlas-brightspot.s3.amazonaws.com%2Ff0%2F71%2Fca132b78468ea6125d247e0615d5%2F39794-50063.jpg"
+            }
+        ]
+    }
+}

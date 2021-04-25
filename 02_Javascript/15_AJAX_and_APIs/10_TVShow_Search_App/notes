@@ -1,0 +1,9 @@
+I) Show search
+    1) We set the Header section of postman to 
+    Key: Accept, Value: application/json
+
+    2) Using postman we put the following into a Get request
+    http://api.tvmaze.com/search/shows?q=girls
+
+    3) This same url will be used for our axios.get().
+

@@ -1,0 +1,5 @@
+1. mkdir (make directory)
+   A) Will create a new directory or directories
+      i) mkdir foldername
+      ii) mkdir foldername1 foldername2
+      iii) mkdir ../foldername (makes a directory 1 folder up)

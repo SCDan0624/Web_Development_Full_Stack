@@ -1,0 +1,6 @@
+1) What is Node?
+    A) Until recently, we code only run JS code in a web browser. 
+    B) Node is a JS runtime that executes code outside of the browser.
+    C) We can use the same JS syntax we know and love to write server 
+    side code, instead of relying on other languages like Python
+    or Ruby

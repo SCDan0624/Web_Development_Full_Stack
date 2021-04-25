@@ -1,0 +1,7 @@
+1) Again follow steps of lesson 2 to make FirstApp and index.js
+2) Code 3 res.send with /cat, /dog, and /
+3) Restart the server
+    A) node index.js
+4) Go to localhost3000/cat
+    A) MEOW!! will display on page
+5) Continue with other routes

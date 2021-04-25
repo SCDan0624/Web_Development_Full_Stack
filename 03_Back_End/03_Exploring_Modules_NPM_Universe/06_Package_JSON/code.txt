@@ -1,0 +1,18 @@
+I) What is package.JSON
+    1) Every node app we create in this lesson will have a package.JSON file
+        A) Not required
+    2) Contains information about projects
+        A) name, description, version, dependencies, ect
+
+II)  Step by Step 
+
+    1) mkdir Artster
+    2) cd Artster
+    3) npm init
+        A) creates package.JSON
+    4) npm i figlet
+        A) installs package
+        B) adds figlet to dependencies 
+    5) touch index.js
+        A) add require and function
+    6) node index.js

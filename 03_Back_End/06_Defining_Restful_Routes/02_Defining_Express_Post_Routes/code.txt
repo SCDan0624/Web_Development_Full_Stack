@@ -1,0 +1,46 @@
+I) Pre work
+    1) Create a new folder RESTDemo
+    2) inside RESTDemo npm init -y
+    3) npm i express
+    4) Copy getpost.html from previous lesson
+    5) touch index.js
+    6) Add the following to start index.js
+
+const express = require("express");
+const app = express();
+
+
+app.listen(3000, () => {
+    console.log("Listening on port 3000");
+});
+
+II) index.js
+    1) Add:
+
+app.get("/tacos", (req, res) => {
+  res.send("GET /tacos response");
+});
+
+app.post("/tacos", (req, res) => {
+  res.send("POST /tacos response");
+});
+
+
+
+III) Postman
+    1) Run GET request for localhost3000/tacos
+        A)"GET /tacos response" should be printed
+    2) Run POST request for localhost3000/tacos
+        A) "POST /tacos response" should be printed
+
+IV) getpost.html
+    1) update form actions with
+
+    "http://localhost:3000/tacos"
+
+V) Test
+    1) go to http://localhost:3000/tacos
+        A) fill out forms and submit 
+        B) response should be
+
+"POST /tacos response" or "GET /tacos response"

@@ -1,0 +1,10 @@
+I) What is REST
+    1) REST is basically a set of guidlines for how a client + server
+    should communicate and perform CRUD operations on a 
+    given resource
+
+    2) The main idea of REST if treating data on the sever-side as 
+    resources than can be CRUD'ed 
+
+    3) The most common way of approaching REST is in formatting the URLs
+    and HTTP verbs in your applications.

@@ -1,0 +1,20 @@
+1) Syntax
+    A) SELECT <columns> FROM <table> WHERE <condition>;
+    B)  SELECT <columns> FROM <table> WHERE <column><operator><value>;
+2) Equality Operator
+    A) Find all rows that a given value matches a column's value.
+        i) SELECT <columns> FROM <table> WHERE <column name> = <value>;
+    B) Example
+        i)SELECT * FROM contacts WHERE first_name = "Andrew";
+        ii) SELECT first_name, email FROM users WHERE last_name = "Chalkley";
+        iii) SELECT name AS "Product Name" FROM products WHERE stock_count = 0;
+        iv)SELECT title "Book Title" FROM books WHERE year_published = 1999;
+3) Inequality Operator
+    A)Find all rows that a given value doesn't match a column's value.
+        i) SELECT <columns> FROM <table> WHERE <column name> != <value>;
+        ii) SELECT <columns> FROM <table> WHERE <column name> <> <value>;
+    B) Example  
+        i) SELECT * FROM contacts WHERE first_name != "Kenneth";
+        ii) SELECT first_name, email FROM users WHERE last_name != "L:one";
+        iii)SELECT name AS "Product Name" FROM products WHERE stock_count != 0;
+        iv) SELECT title "Book Title" FROM books WHERE year_published != 2015;

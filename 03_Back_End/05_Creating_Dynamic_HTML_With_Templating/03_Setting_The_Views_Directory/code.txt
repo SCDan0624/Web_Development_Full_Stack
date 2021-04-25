@@ -1,0 +1,8 @@
+1) In previous lesson our render will only work
+from directory that holds the views
+
+2) How to set directory:
+    A) const path = require("path");
+    B) app.set("views", path.join(__dirname, "/views"));
+
+3) Now our project will use the directory name where index.js is located

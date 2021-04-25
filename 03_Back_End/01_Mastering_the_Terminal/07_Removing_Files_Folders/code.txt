@@ -1,0 +1,9 @@
+1) rm
+    A) will delete a file or files (permanently)
+    B) files
+        i) rm app.css
+        ii) rm app.js index.html
+2) rm -rf 
+    A) deletes an entire directory including files inside
+        i) rm -rf foldername
+    

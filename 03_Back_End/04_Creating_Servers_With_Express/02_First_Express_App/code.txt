@@ -1,0 +1,9 @@
+I) Set up
+    1) mkdir FirstApp
+    2) cd FirstApp
+    3) npm init -y (skips questions)
+    4) npm i express
+    5) touch index.js
+
+II) Execute
+    1) node index.js

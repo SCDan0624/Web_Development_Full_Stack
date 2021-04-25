@@ -1,0 +1,34 @@
+I) Serving static files in Express
+    1) express.static(root,[options])
+        A) Example
+
+            app.use(express.static('public'))
+
+II) index.js
+    1) Add:
+
+            app.use(express.static('public'))
+
+III) public
+    1) Create a public folder
+    2) touch app.css inside folder
+
+IV) app.css
+    1) Add:
+
+            body {
+            background-color: aquamarine;
+            }
+    
+    2)
+
+V) subreddit.ejs
+    1) Add to head:
+
+<link rel="stylesheet" href="/app.css">
+
+VI) index.js
+    1) Change app.use(express.static) to:
+
+app.use(express.static(path.join(__dirname, "public")));
+

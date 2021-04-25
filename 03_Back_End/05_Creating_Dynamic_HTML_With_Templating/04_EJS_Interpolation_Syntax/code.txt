@@ -1,0 +1,2 @@
+I) Focus of todays lesson
+  <%= Outputs the value into the template (HTML escaped)

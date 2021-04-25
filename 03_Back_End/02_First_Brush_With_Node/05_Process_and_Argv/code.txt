@@ -1,0 +1,7 @@
+1) Process
+    A) process.cwd()
+        i) shows current working path
+    B) process.argv
+        i) The process.argv property returns an array containing the 
+        ii) command-line arguments passed when the Node.js
+        iii) process was launched.

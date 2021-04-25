@@ -1,0 +1,21 @@
+1) What is express?
+    A) A web development framework
+    B) Helps is make web applications
+    C) It is an NPM package which comes with a bunch of methods and optional 
+    plugins that we can use to build web applications and API's
+
+2) What does express do?
+    A) Start up a server to listen for requests
+    B) Parse incoming requests
+    C) Match those requests to particular routes
+    D) Craft our http response and associated content
+
+3) What is a Library?
+    A) When you use a library, you are in charge.
+    You control the flow of the application code,
+    and you decide when to use the library.
+
+4) What is a framework?
+    A) With frameworks, that control ius inverted.
+    The framework is in charge, and you are merely a participate.
+    The framwork tells you where to plug in the code.

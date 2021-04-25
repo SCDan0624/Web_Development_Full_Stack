@@ -1,0 +1,15 @@
+I) Database parts 
+    1) Table
+        A) Where we get our SQL data from
+    2) Column
+        A) Vertical section of table 
+    3) Row
+        A) Horizontal section of table 
+
+II) SQL syntax
+    1) Syntax
+        A) SELECT * FROM <table name>;
+            i) * 
+                a) all columns
+            ii) ;
+                a) ends statement

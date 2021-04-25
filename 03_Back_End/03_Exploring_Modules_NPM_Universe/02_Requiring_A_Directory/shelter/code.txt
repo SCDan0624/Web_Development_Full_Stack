@@ -1,0 +1,17 @@
+1)Run node index.js
+
+[
+{name:'blue',color:'grey'},
+{name:'sadie',color:'black'},
+{name:'janet',color:'orange'}
+]
+
+2) require entire shelter directory
+3) Run node app.js
+
+Required an entire directory
+[
+{name:'blue',color:'grey'},
+{name:'sadie',color:'black'},
+{name:'janet',color:'orange'}
+]

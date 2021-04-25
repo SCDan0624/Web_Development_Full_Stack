@@ -1,0 +1,11 @@
+1) Create same folder/setup as last lesson
+2) add (req,res) as arguments to app.use
+    A) Express creates a JS req,res object, by parsing incoming 
+    HTTP request information and passing it in as the first argument in our
+    callback.
+3) Response object
+    A) Has methods on it such as 
+        i) res.send 
+            a) Sends the HTTP response
+4) Postman
+    A) Can be used to test these res.send methods

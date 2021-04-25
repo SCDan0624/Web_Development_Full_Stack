@@ -1,0 +1,44 @@
+I) Start-Up Steps
+    1) mkdir Templating_Demo, cd Templating_Demo
+    2) npm init -y
+    3) npm i express
+    4) touch index.js
+
+II) Inside index.js
+    1) require express
+        A) const express = require("express");
+        B) const app = express();
+    2) app.get and listen
+        A)
+        app.get("/", (req, res) => {
+            res.send("HI");
+        });
+
+        B)
+        app.listen(3000, () => {
+            console.log("Listening on port 3000");
+        });
+
+    3) Start server
+        A) nodemon index.js
+
+III) Tell express to use EJS
+    A) app.set('view engine', 'ejs');
+        i) this will require ejs behind the scenes
+
+IV) Install EJS 
+    1) Stop server
+    2) npm i ejs
+
+V) Views
+    1) mkdir views
+    2) touch views/home.ejs
+
+VI) home.ejs
+    1) Add standard html shell
+    2) See page for the rest
+
+VII) index.js
+    1) add res.render
+    2) Start server again in folder with views dir.
+

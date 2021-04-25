@@ -1,0 +1,5 @@
+/*
+Application programming interface
+
+You send a API and you get JSON back.
+*/

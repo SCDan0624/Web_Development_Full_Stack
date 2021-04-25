@@ -1,0 +1,11 @@
+1) Syntax
+    A) SELECT * FROM <table> WHERE <column> IS NULL;
+    B) SELECT * FROM <table> WHERE <column> IS NOT NULL;
+2) Example 
+    A) What are the loans that are due back after Dec 18th 2015?
+    B) SELECT * FROM loans  WHERE returned_by > "2015-12-18" 
+    AND  returned_on IS NULL;
+3) Example 2
+    A) What loans have been returned already?
+    B) SELECT * FROM loans  WHERE returned_by > "2015-12-18" 
+    AND  returned_on IS NOT NULL;

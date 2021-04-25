@@ -1,0 +1,25 @@
+I) How to parse the body
+    1) Add the following lines to index.js
+
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+    2) Add the following line to app.post('/tacos')
+
+console.log(reg.body)
+
+    3) Now go to localhost3000/tacos and enter data for a post request and hit submit.
+        A) An object will appear with your new parsed data in the console.
+
+    4) Same object will appear in postman as well.
+
+II) How to use parsed data
+    1) Change your app.post to this:
+
+app.post("/tacos", (req, res) => {
+  const { meat, qty } = req.body;
+  res.send(`OK, here are your ${qty} ${meat} tacos`);
+});
+
+    2) Go to localhost3000/tacos and enter data for a post request and hit submit.
+        A)An object will appear with your new parsed data on the webpage

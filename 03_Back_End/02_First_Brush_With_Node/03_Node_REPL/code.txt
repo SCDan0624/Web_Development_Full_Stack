@@ -1,0 +1,8 @@
+1) How to get into Node REPL from commandline
+    A) Node
+2) How to get out of Node   
+    A) .exit
+    B) ^D
+3) Not included in Node 
+    A) No DOM API
+    B) no window or document API as well

@@ -1,0 +1,2 @@
+1) If inside root directory with a package.json
+    A) npm install will install all dependencies

@@ -1,0 +1,15 @@
+I) Templating
+    1) Allows us to define a preset "pattern" for a webpage, 
+    that we can dynamically modify.
+    2) Example:
+        A) A single search template that displays all the results for
+        a given search term.
+        B) We don't know the results ahead of time.
+        C) Webpage is created on the fly.
+    3) Simple Definition
+        A) Creating some form of logic (like if statement) with HTML
+
+II) Tools for Templating
+    1) EJS
+        A) Advantage of EJS
+            i) Javascript syntax
