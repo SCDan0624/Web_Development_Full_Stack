@@ -1,0 +1,10 @@
+I) Index.js
+    1) Plan:
+    2) /commments will be our base
+        A) GET /comments - list all /comments
+        B) POST /comments - Create a new comment 
+        C) GET /comments/:id - Get one comment (using ID)
+        D) PATCH /comments/:id - Update one comment
+        E) DELETE /comments/:id - Destroy one comment 
+
+    3) Quick note we don't have a DB yet so we will fake it with an array

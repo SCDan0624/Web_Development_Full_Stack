@@ -1,0 +1,59 @@
+I) Prework
+    1) Add EJS
+        A) npm i ejs
+    2) Tell express to use EJS. Add to index.js:
+        A) app.set('view engine', 'ejs');
+    3) Create views directory inside RESTDemo
+        A) mkdir views 
+        B) mkdir comments (inside of views)
+            i) touch index.ejs (inside of comments)
+    4) Start server 
+        A) nodemon index.js
+
+II) Index.js 
+    1) Add: 
+
+const path = require("path");
+
+app.set("views", path.join(__dirname, "views"));
+
+    2) Create fake comments data 
+
+const comment = [
+  {
+      username:'',
+      comment:''
+  }
+]
+
+III) views 
+    1) Make a new file
+
+
+IV) index.js 
+    1) Set up my route/comments 
+        A) Add 
+
+app.get('/comments',(req,res) => {
+    res.render('index')
+})
+
+V) index.ejs
+    1) add html template 
+
+VI) index.js 
+    1) pass through comments to our res.render 
+
+app.get("/comments", (req, res) => {
+  res.render('comments/index', {comments});
+});
+
+VII) index.ejs 
+    1)Create ul's 
+        A) add the following EJS to your UL's
+
+    <ul>
+        <% for (let c of comments){ %> 
+            <li><%=c.comment%> - <b><%=c.username%></b> </li>
+        <% } %> 
+    </ul>
