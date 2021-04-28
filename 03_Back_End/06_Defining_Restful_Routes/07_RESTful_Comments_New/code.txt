@@ -1,0 +1,75 @@
+I) Prework
+    1) Inside views/comments
+        A) touch new.ejs 
+
+II) This Lesson
+    1) Previous lesson we focused on the Read portion of CRUD
+    
+    2) In this lesson we will focus on the Create portion of CRUD
+    to create new comments
+    
+    3) We will make a form that a user can fill out and submit his/her
+    comments
+
+    4) We will push the new comments into our array of objects comments
+
+    5) We will also set up 2 routes
+        A) One route for the form itself (new route)
+        B) One route
+
+III) index.js 
+    1) Add the following
+
+app.get("/comments/new", (req, res) => {
+  res.render("comments/new");
+});
+
+IV) new.ejs
+    1) Add an HTML shell then add the following:
+
+<body>
+    <h1>Make a new comment</h1>
+    <form action="/comments" method="post">
+        <section>
+            <label for="username">Enter username:</label>
+            <input type="text" id="username" placeholder="username" name="username">
+        </section>
+        <section>
+            <label for="comment">Comment Text</label>
+            <br>
+            <textarea name="comment" id="comment" cols="30" rows="5"></textarea>
+        </section>
+        <button>Submit</button>
+
+    </form>
+    
+</body>
+
+V) index.js
+    1) Set up post route 
+
+app.post("/comments", (req, res) => {
+  const { username, comment } = req.body;
+  comments.push({ username, comment });
+  res.send("It Worked!");
+});
+
+    2) Breakdown of code 
+        A) app.post("/comments", (req, res) => { 
+            i) Sends post request to /comments. 
+            ii) Any res.send will be shown on /comments
+        
+        B) const { username, comment } = req.body;
+            i) Destructures the object data we need from req.body
+            ii) names match the name section on the form we are submitting 
+
+        C) comments.push({ username, comment });
+            i) Our username and comment will be added to our array of comments
+            that is displayed at /comments
+        
+
+VI) Our current workflow
+    1) Go to comments/new and submit our comment
+    2) Get redirected to /comments and be shown "It Worked!". Hit enter.
+    3) Get redirected again to /comments where our comments array is being
+    displayed
