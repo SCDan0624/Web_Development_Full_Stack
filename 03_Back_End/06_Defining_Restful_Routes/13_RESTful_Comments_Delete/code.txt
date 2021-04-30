@@ -1,0 +1,26 @@
+I) Prework
+    1) Last task is to set up a destory path
+    2) Like the PATCH request we can't send a DELETE request with a form.
+
+II) index.js
+    1) Change our const comments array into let comments 
+    2) Add the following below app.patch 
+
+app.delete("/comments/:id", (req, res) => {
+  const { id } = res.params;
+  comments.filter((c) => c.id !== id);
+  res.redirect("/comments");
+});
+
+III) show.ejs 
+    1) Add the follow below our edit comment button 
+
+<form method = "POST" action="/comments/<% commment.id %>?_method=DELETE">
+    <button>Delete</button>
+ </form>
+
+IV) What to do next
+    1) Build out a Full CRUD app with something other than comments
+    
+
+

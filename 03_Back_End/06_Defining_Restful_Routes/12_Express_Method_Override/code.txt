@@ -1,0 +1,54 @@
+I) Prework
+    1) We still need a form to update the comments
+    2) We can't do it via HTML forms because HTML forms can only
+    send GET or POST requests, not PATCH requests.
+
+    3) method-override
+        A) A package that lets you use HTTP verbs such as PUT or DELETE
+        in places where the client does not support it.
+        B) npm i method-override
+        C) app.use(merhodOverride('_method'))
+
+II) index.js 
+    1) Add:
+
+app.get("/comments/:id/edit", (req, res) => {
+  const { id } = res.params;
+  const comment = comments.find((c) => c.id === id);
+  res.render("comments/edit", { comment });
+});
+
+III) edit.ejs 
+    1) Add a edit.ejs file to views/comments
+    2) Add inside the body tags 
+
+    <h1>Edit</h1>
+    <form action="">
+        <textarea name="comment" id="" cols="30" rows="10">
+            <%= comment.comment %> 
+        </textarea>
+        <button>Save</button>
+    </form>
+
+IV) show.ejs 
+    1) Add or edit the two anchor tags below h2 tag with this 
+
+    <a href="/comments">Back to index</a>
+    <a href="/comments/<% commment.id %>/edit">Edit Comments</a>
+
+V) Back to edit.ejs
+    1) Add a path to your form 
+
+ <form action="/comments/<%= comment.id %>/edit">
+
+VI) Index.js 
+    1) Add the following toward the top of your page:
+
+const methodOverride = require("method-override");
+app.use(methodOverride("_method"));
+
+VII) edit.ejs 
+    1) Change your form to the following 
+
+<form method="POST" action="/comments/<%= comment.id%>/?_method=PATCH">
+

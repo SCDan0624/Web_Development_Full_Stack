@@ -1,0 +1,40 @@
+I) Prework
+    1) Installing UUID 
+        A) npm install uuid
+    2) common syntax 
+
+const {v4: uuidv4} = require('uuid');
+uuidv4();
+
+II) index.js 
+    1) Add to top of page 
+
+const {v4: uuid} = require('uuid');
+
+
+        A) Note that we destructred v4 and gave it a new name of uuidv4
+
+    2) Change id's to the following in our comments array 
+
+id: uuidv4(),
+
+    3) Change our app.post(/comments)
+
+app.post("/comments", (req, res) => {
+  const { username, comment } = req.body;
+  comments.push({ username, comment, id: uuid() });
+  res.redirect("/comments");
+});
+
+    4) Remove our parseInt from our app.get('/comments/:id')
+
+app.get("/comments/:id", (req, res) => {
+  const { id } = res.params;
+  const comment = comments.find((c) => c.id === id);
+  res.render("comments/show", { comment });
+});
+
+III) What we did 
+    1) Now when we submit comments a unique id is added. 
+    
+

@@ -1,0 +1,37 @@
+I) Prework
+
+
+II) index.js
+    1) Add id:number key value pairs to our comments array 
+    2) Add the following for our show route
+
+app.get("/comments/:id", (req, res) => {
+  const { id } = res.params;
+  const comment = comments.find((c) => c.id === parseInt(id));
+  res.render("comments/show", { comment });
+});
+
+III) show.ejs
+    1) touch show.ejs in the views/comments folder
+    2) Add html shell 
+    3) Add the following inside the body:
+
+<h1>Comment id: <%= comment.id %> </h1>
+<h2><%= comment.comment %> = <%= comment.username %></h2>
+<a href="/comments">Back to index</a>
+
+
+IV) index.ejs
+    1) We need a link to take user to show page.
+    2) Add the following line inside our li after our bold tag 
+
+<a href="/comments/<%= c.id %> ">details</a>
+
+
+V) What we did
+    1) Now if we go to localhost3000/comments/2 
+        A) We will go to the show.ejs page which will show the user who 
+        has an id that matches 2.
+
+    2) Note there is no error handling yet in our project so if user 
+    goes to an id that doesn't exist user will get a TypeError.

@@ -1,0 +1,40 @@
+I) Prework
+    1) PUT vs PATCH 
+        A) PUT is going to update an entire thing. Replacing 
+        all representations.
+
+        B) PATCH is going to update something via partial 
+        modification
+
+II) index.js 
+    1) Add the following 
+
+app.patch("/comments/:id", (req, res) => {
+  const { id } = res.params;
+  const newCommentText = req.body.comment;
+  const foundComment = comments.find((c) => c.id === id);
+  foundComment.comment = newCommentText;
+  res.redirect("/comments");
+});
+
+    2) Breakdown 
+        A) const { id } = res.params;
+            i) taking the id from the URL 
+
+        B) const newCommentText = req.body.comment;
+            i) taking whatever was sent in the req.body (the comment payload)
+
+        C) const foundComment = comments.find((c) => c.id === id);
+            i) finding a comment hopefully with the id of the url 
+
+        D) foundComment.comment = newCommentText;
+            i) We then update the foundcomment's comment property 
+            to be whatever was in req.body.comment 
+
+        E) res.redirect("/comments");
+            i) redirect back to index page
+
+
+III) What we are missing
+    1) A form to actually edit our comments which will be in the next 
+    lesson

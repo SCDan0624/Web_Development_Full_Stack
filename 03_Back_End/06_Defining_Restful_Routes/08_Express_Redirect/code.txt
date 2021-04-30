@@ -1,0 +1,29 @@
+I) Prework
+    1) Current Problem
+        A) After submitting our comment we are shown a page that
+        states "It Worked!"
+            i) To get to our comments page we need to hit enter,
+            which sends a GET requests and redirects us.
+            ii) Hitting refresh would resend another POST request 
+            causing our comment to be posted twice
+        
+        B) We need the page to redirect us to our page that is displaying
+        comments 
+
+    2) Fix 
+        A) res.redirect([status,]path)
+
+II) index.js 
+    1) Add the following line to our app.post(/comments):
+
+        res.redirect("/comments");
+
+III) index.ejs 
+    1) Add the following below our ul 
+
+        <a href="/comments/new">New Comment</a>
+
+IV) new.ejs
+    1) Add the following below form 
+
+        <a href="/comments">Back to Index</a>
