@@ -1,0 +1,63 @@
+I) Mongoose models
+    1) Define your schema 
+        
+        A) add to index.js
+
+const movieSchema = new mongoose.Schema({
+  title: String,
+  year: Number,
+  score: Number,
+  rating: String,
+});
+
+    2) Create a model and connect to schema 
+
+        A) add to index.js
+            i) "Movie" is our model name 
+
+const Movie = mongoose.model("Movie", movieSchema);
+
+        B) This will create a collection called 'movies'
+
+        C) I can now make new instances of my Movie class and save them to a db. 
+
+    3) Make a new instance of movie
+    
+        A) add to index.js 
+
+const amadues = new Movie({
+  title: "Amadeus",
+  year: 1986,
+  score: 9.2,
+  rating: "R",
+});
+
+
+II) Terminal work 
+    1) Go to MongooseBasics folder
+    2) node 
+    3) Inside of node 
+        A) .load index.js 
+    4) Hit enter a few times to make space 
+    5) amadeus
+        A) The following will be returned 
+
+{
+  _id: 6096ed76394d3b1632b840af,
+  title: 'Amadeus',
+  year: 1986,
+  score: 9.2,
+  rating: 'R'
+}
+
+    6) Save to db 
+        A) amadeus.save()
+
+III) Mongo Shell
+    1) mongo 
+    2) use movieApp 
+        A) switches to db movieApp
+    3)db.movies.find()
+        A) Our amadeus object should be displayed 
+
+

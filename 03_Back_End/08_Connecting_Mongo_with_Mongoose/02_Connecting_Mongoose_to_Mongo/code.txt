@@ -1,0 +1,26 @@
+I) Installing Mongoose 
+    1) Created a folder called MongoodBasics and cd into folder.
+    2) npm init -y 
+    3) npm i mongoose 
+    4) touch index.js 
+    5) mongod server needs to be running
+      i) brew services start mongodb-community@4.4
+
+II) index.js
+    1) Add: 
+
+const mongoose = require("mongoose");
+mongoose
+  .connect("mongodb://localhost:27017/movieAPP", {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => {
+    console.log("Connection open!");
+  })
+  .catch((err) => {
+    console.log("Oh no error!!!");
+    console.log(err);
+  });
+
+
