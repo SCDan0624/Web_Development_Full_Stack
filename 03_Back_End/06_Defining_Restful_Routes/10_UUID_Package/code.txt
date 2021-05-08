@@ -3,7 +3,7 @@ I) Prework
         A) npm install uuid
     2) common syntax 
 
-const {v4: uuidv4} = require('uuid');
+const {v4: uuid} = require('uuid');
 uuidv4();
 
 II) index.js 
@@ -16,7 +16,7 @@ const {v4: uuid} = require('uuid');
 
     2) Change id's to the following in our comments array 
 
-id: uuidv4(),
+id: uuid(),
 
     3) Change our app.post(/comments)
 

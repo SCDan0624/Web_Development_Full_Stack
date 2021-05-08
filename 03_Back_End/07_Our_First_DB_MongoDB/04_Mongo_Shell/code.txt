@@ -1,0 +1,15 @@
+I) Mongo Shell Basics
+    1) To start go to terminal and type mongo. 
+        A) Note mongoDB needs to be installed and running 
+    2) How to find commands
+        A) help 
+    3) Mongo is also a JS Shell 
+    4) How to get to your default database named test
+        A) db 
+    5) Show all databases 
+        A) show dbs 
+
+II) Making Databases 
+    1) use < database name > 
+        A) use animalShelter 
+        B) After the db is made use animalShelter will just switch you to that DB.

@@ -1,0 +1,17 @@
+I) Inserting documents in Mongo 
+    1) insertOne() example
+        A) db.dogs.insertOne({name:"Charlie",age:3,breed:"corgi",catFriendly:true})
+        B) show collections 
+            i) dogs will be displayed 
+        C) find all dogs 
+            i) db.doigs.find()
+    
+    2) insert() example 
+        A) db.dogs.insert([{name:"wyatt",breed: "Golden", age:14, catFriendly: false},
+        {name:"Tonya", breed:"Chihuahua", age:17,catFriendly:true}])
+        B) db.dogs.find()
+
+    3) insert() example 
+        A) db.cats.insert({name:"Blue Steele", age: 6, dogFriendly:false, breed:
+        "Scottish fold"})
+        B) db.cats.find()

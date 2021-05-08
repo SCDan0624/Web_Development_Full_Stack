@@ -1,0 +1,10 @@
+I) Deleting in Mongo 
+    1) deleteOne()
+        A) db.cats.find()
+        B) db.cats.deleteOne({name:"Blue Steele"})
+    
+    2) deleteMany()
+        A) db.dogs.find()
+        B) db.dogs.deleteMany({isAvailable: false  })
+        C) db.dogs.deleteMany({})
+            i) Will delete all dogs 

@@ -1,0 +1,8 @@
+I) What is Mongoose 
+    1) A way to connect express and node to our MongoDB.
+    2) Known as a ODM 
+        A) Object Data Mapper 
+            i) ODMs map documents coming from a db into usable JS objects
+            ii) Mongoose provides ways for us to model out our application
+            data and define a schema. It offers easy ways to validate data and 
+            build complex queries from the comfort of JS

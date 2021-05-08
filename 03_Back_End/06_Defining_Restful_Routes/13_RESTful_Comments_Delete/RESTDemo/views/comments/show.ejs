@@ -8,10 +8,10 @@
 </head>
 <body>
     <h1>Comment id: <%= comment.id %> </h1>
-    <h2><%= comment.comment %> = <%= comment.username %></h2>
+    <h2><%= comment.comment %> - <%= comment.username %></h2>
     <a href="/comments">Back to index</a>
-    <a href="/comments/<% commment.id %>/edit">Edit Comments</a>
-    <form method = "POST" action="/comments/<% commment.id %>?_method=DELETE">
+    <a href="/comments/<%=comment.id%>/edit">Edit Comments</a>
+    <form method="POST" action="/comments/<%= comment.id %>?_method=DELETE">
         <button>Delete</button>
     </form>
 </body>

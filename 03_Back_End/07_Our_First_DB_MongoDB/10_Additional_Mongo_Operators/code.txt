@@ -1,0 +1,30 @@
+I) More specific find 
+    1) finding based on nested attributes 
+        A) db.dogs.find({"personality.childFriendly":true})
+        B) db.dogs.find({"personality.childFriendly":true, size:"M"})
+
+II) More $ operators 
+    1) greater than $gt examples
+        A) db.inventory.find({qty:{$gt:20}})
+        B) db.dogs.find(){age:{$gt:8}}
+
+    2) greater than or equal $gte 
+        A) db.dogs.find(){age:{$gte:10}}
+    
+    3) less than $lt 
+        A) db.dogs.find(){age:{$lt:10}}
+
+    4) less than or equal $lte 
+        A) db.dogs.find(){age:{$lte:15}}
+
+    5) $in (match any value in specified array )
+        A) db.dogs.find({breed: {$in: ["Mutt","Corgi"]}})
+
+    6) Combo 
+        A) db.dogs.find({breed: {$in: ["Mutt","Corgi"]}, age:{$lt:5}})
+
+    7) $ne
+        A) db.dogs.find({breed: {$ne: ["Mutt","Corgi"]}})
+
+    8) $or 
+        A) db.inventory.find({$or:[{quantity:{$lt:20}},{price:10}]})

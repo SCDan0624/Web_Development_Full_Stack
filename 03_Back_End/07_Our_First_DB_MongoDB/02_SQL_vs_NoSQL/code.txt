@@ -1,0 +1,7 @@
+I) SQL vs NoSQL 
+    1) SQL
+        A) Relational DBs 
+        B) We pre-define a schema of tables before inserting anything 
+    2) NoSQL
+        A) Do not use SQL 
+        B) Types include document, key-value, and graph stores

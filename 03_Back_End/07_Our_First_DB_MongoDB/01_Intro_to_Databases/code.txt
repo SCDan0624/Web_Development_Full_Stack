@@ -1,0 +1,14 @@
+I) MongoDB
+    1) What is it?
+        A) A document database, which we can use to store and retrieve complex 
+        data from. 
+        B) Often used with Node
+
+    2) Why use a database, instead of saving to a file? 
+        A) DBs can handle large amounts of data efficiently and store 
+        it compactly.
+        B) They provide tools for easy insertion, querying, and 
+        updating of data 
+        C) They generally offer security features and control over
+        access to data 
+        D) They (generally) scale well

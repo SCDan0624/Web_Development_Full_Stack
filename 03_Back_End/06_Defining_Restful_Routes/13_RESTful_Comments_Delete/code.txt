@@ -8,7 +8,7 @@ II) index.js
 
 app.delete("/comments/:id", (req, res) => {
   const { id } = res.params;
-  comments.filter((c) => c.id !== id);
+  comments = comments.filter((c) => c.id !== id);
   res.redirect("/comments");
 });
 

@@ -1,0 +1,5 @@
+I) BSON 
+    1) Binary JSON 
+        A) Allows data to be parsed more quickly than JSON 
+        B) Allows data to take up less memory 
+        C) Supports more data types than JSON 

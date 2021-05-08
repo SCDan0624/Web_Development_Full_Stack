@@ -10,7 +10,7 @@ II) index.js
     1) Add the following 
 
 app.patch("/comments/:id", (req, res) => {
-  const { id } = res.params;
+  const { id } = req.params;
   const newCommentText = req.body.comment;
   const foundComment = comments.find((c) => c.id === id);
   foundComment.comment = newCommentText;

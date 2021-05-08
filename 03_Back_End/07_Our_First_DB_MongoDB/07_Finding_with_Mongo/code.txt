@@ -1,0 +1,10 @@
+I) Find with Mongo
+    1) db.collection.find() examples
+        A) db.cats.find() or db.dogs.find()
+        B) db.dogs.find({breed:"corgi"})
+        C) db.dogs.find({catFriendly: true})
+        D) note this method returns a cursor
+
+    2) db.collection.findOne() examples 
+        A) db.dogs.findOne({catFriendly:true})
+        B) note this method returns a document

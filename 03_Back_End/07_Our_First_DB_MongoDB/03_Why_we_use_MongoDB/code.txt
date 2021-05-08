@@ -1,0 +1,11 @@
+I) Why we are learning MongoDB?
+    1) Mongo is very commonly used with Node and Express (MEAN and MERN stacks)
+    2) It is easy to get started with (though it can be tricky to master)
+    3) It plays particularly well with JavaScript 
+    4) It's popularity also means there is a strong community 
+    of developers using Mongo. 
+
+II) Side note
+    1) Learn a SQL DB within the next yr.
+        A) MySQL
+        B) Postgres

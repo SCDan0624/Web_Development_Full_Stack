@@ -1,0 +1,17 @@
+I) Updating 
+    1) updateOne() example 
+        A) db.dogs.find()
+            i) this will show the 3 dogs we made in the previous lesson 
+        B) db.dogs.updateOne({name:"Charlie"}, {$set:{age: 4}})
+
+    2) updateMany() example 
+        A) This will update all examples of db that matches your selector criteria
+        B) db.dogs.find()
+        C) db.dogs.updateMany({catFriendly: true}, {$set:{isAvailable: false}})
+
+    3) $currentDate
+        A) $currentDate: {lastModified:true}
+            i) Will set the lastModified section to todays date
+    4) $currentDate example 
+        A) db.cats.find()
+        B) db.cats.updateOne({age:6},{$set:{age:7}, $currentDate:{lastChanged: true}})
