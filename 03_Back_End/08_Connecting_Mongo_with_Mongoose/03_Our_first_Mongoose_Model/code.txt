@@ -25,7 +25,7 @@ const Movie = mongoose.model("Movie", movieSchema);
     
         A) add to index.js 
 
-const amadues = new Movie({
+const amadeus = new Movie({
   title: "Amadeus",
   year: 1986,
   score: 9.2,

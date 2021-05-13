@@ -1,5 +1,5 @@
 I) Installing Mongoose 
-    1) Created a folder called MongoodBasics and cd into folder.
+    1) Created a folder called MongooseBasics and cd into folder.
     2) npm init -y 
     3) npm i mongoose 
     4) touch index.js 
@@ -11,7 +11,7 @@ II) index.js
 
 const mongoose = require("mongoose");
 mongoose
-  .connect("mongodb://localhost:27017/movieAPP", {
+  .connect("mongodb://localhost:27017/movieApp", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })

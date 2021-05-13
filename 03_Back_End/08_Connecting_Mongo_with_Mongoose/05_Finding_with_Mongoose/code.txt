@@ -1,0 +1,22 @@
+I) Finding with Mongoose 
+    1) index.js
+        A) Remove the previous insertMany and new movie examples.
+     
+    2) node
+        A) .load index.js 
+        B) Movie.find({}).then(data => console.log(data))
+            i) Shows all lovies
+        C) Movie.find({rating: 'PG-13'}).then(data => console.log(data))
+            i) Shows only PG-13 movies
+        D) Movie.find({year: {$lt: 1990}}).then(data => console.log(data))
+            i) Movies before 1990 
+
+    3) Model.findOne()
+        A) Movie.findOne({}).then(m => console.log(m))
+            i) finds one movie only
+            ii) result will be given in object instead of array of obect.
+
+    4)  Model.findById()
+        A) Movie.findOne({}).then(m => console.log(m))
+            i) find movie and gives Id 
+        B) Movie.findById('609b19d830826ce9e5fa42de').then(m => console.log(m))
