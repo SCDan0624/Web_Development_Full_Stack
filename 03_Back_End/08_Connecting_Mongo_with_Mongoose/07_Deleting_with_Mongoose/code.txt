@@ -1,0 +1,10 @@
+I) Delete with Mongoose 
+    1) Model.remove()  # use node 
+        A) Movie.remove({title:"Amelie"}).then(msg => console.log(msg))
+
+    2) deleteMany() # use node
+        A) Movie.deleteMany({year:{$gte: 1999}}).then(msg => console.log(msg))
+
+    3) Model.findOneAndDelete() # use node
+        A) Movie.findOneAndDelete({title:"Alien"}).then(msg => console.log(msg))
+            i) You will get data back using this

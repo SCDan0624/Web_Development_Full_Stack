@@ -1,0 +1,33 @@
+I) Update with Mongoose 
+   
+    1) Model.updateOne()
+        A) Movie.updateOne({title:'Amadeus'}, {year:1984}).then(res => console.log(res))
+            i) { n: 1, nModified: 1, ok: 1 } 
+            ii) Above will be what we get back not the movie we updated
+        B) db.movies.find({title:'Amadeus'}) (In Mongo)
+            i) To check if update worked.
+
+    2) Model.updateMany()
+        A) db.movies.find({ title: $in: ['Amadeus', 'Stand By Me']}})
+            i) This will be done in Mongo 
+
+
+        B) Movie.updateMany({title:{$in:['Amadeus','Stand By Me']}},{score:10})
+        .then(res => console.log(res))
+
+    3) Model.findOneAndUpdate()
+        A) Movie.findOneAndUpdate({title:'The Iron Giant'},{score:7.0})
+        .then(m => console.log(m))
+
+        B) Go to Mongo 
+            i) db.movies.find()
+                a) Iron Giant will now have score of 7
+
+    4) Better update with Model.findOneAndUpdate()
+        A) Go to Mongoose (node)
+        B) Movie.findOneAndUpdate({title:'The Iron Giant'},{score:7.8},{new:true})
+        .then(m => console.log(m))
+        C) this will return new updated version
+            
+
+                

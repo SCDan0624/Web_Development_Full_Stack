@@ -1,0 +1,52 @@
+I) New model 
+    1) Inside Mongoose Basics folder 
+        A) touch product.js
+
+    2) product.js 
+        A) ADD: 
+
+const mongoose = require("mongoose");
+
+mongoose
+  .connect("mongodb://localhost:27017/shopApp", {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => {
+    console.log("Connection open!");
+  })
+  .catch((err) => {
+    console.log("Oh no error!!!");
+    console.log(err);
+  });
+
+    
+          B) ADD:
+
+const productSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: true,
+  },
+  price: {
+    type: Number,
+  },
+});
+
+const Product = mongoose.model("Product", productSchema);
+
+const bike = new Product({ name: "Mountain Bike", price: 599 });
+bike
+  .save()
+  .then((data) => {
+    console.log("it worked!");
+    console.log(data);
+  })
+  .catch((err) => {
+    console.log("Oh no an error");
+    console.log(err);
+  });
+
+  3) Terminal 
+    A) node product.js
+      i) mountain bike example saved
