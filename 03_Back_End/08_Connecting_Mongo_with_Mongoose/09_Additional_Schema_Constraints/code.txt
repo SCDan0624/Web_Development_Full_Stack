@@ -1,0 +1,74 @@
+I) Setting more constraints to Schemas
+  1) adding a default
+    A) product.js 
+
+const bike = new Product({ name: "Bike Helmet", price: 29.50 });
+
+    onSale: {
+    type: Boolean,
+    default: false,
+  },
+
+    B) terminal 
+      i) node product.js
+  
+  2) maxLength
+    A) product.js 
+  
+  name: {
+    type: String,
+    required: true,
+    maxlength: 20,
+
+  3) min and max for numbers 
+    A) product.js 
+
+  price: {
+    type: Number,
+    required: true,
+    min: 0,
+  },
+
+  4) Array of strings 
+    A) product.js 
+
+const bike = new Product({
+  name: "Bike Helmet",
+  price: 19.5,
+  categories: ["Cycling", "Safety"],
+});
+
+const productSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: true,
+    maxlength: 20,
+  },
+  price: {
+    type: Number,
+    required: true,
+    min: 0,
+  },
+  onSale: {
+    type: Boolean,
+    default: false,
+  },
+  categories: [String],
+});
+
+  5) Nested objects
+    A) product.js
+      i) below categories 
+
+qty: {
+    online: {
+      type: Number,
+      default: 0,
+    },
+    inStore: {
+      type: Number,
+      default: 0,
+    },
+  },
+
+   

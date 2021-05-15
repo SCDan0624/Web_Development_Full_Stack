@@ -1,0 +1,12 @@
+I) Validating Schema Updates
+  1) Validations will work for creating a new item but not
+  updating a new item
+
+  2) To run validations while updating you need to add runValidators 
+
+Product.findOneAndUpdate(
+  { name: "Tire Pump" },
+  { price: -19.99 },
+  { new: true, runValidators: true }
+);
+

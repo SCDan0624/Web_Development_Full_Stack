@@ -1,0 +1,24 @@
+I) Adding custom validations 
+  1) product.js
+    A) Change this section of productSchema
+
+  price: {
+    type: Number,
+    required: true,
+    min: [0, "Price must be a postive number"],
+  },
+
+
+II) Adding custom validations 2
+  1) enum 
+    A) Add an array of custom strings that must be used 
+
+  2) Example using product.js
+    A) Add to productSchema after inStore 
+
+  size: {
+    type: String,
+    enum: ["S", "M", "L"],
+  },
+
+   B) Add size to const bike 
