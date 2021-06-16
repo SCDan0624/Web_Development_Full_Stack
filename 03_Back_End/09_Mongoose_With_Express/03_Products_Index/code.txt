@@ -1,0 +1,54 @@
+I) Defining our first route that will query mongodb
+  1) index.js
+    A) Add
+
+app.get("/products", async (req, res) => {
+  const products = await Product.find({});
+  console.log(products);
+  res.send("All products will be here");
+});
+
+      i) await/async is used in place of .then 
+      ii) this will be used A LOT in the future 
+
+
+II) Check server
+  1) Terminal 
+    A) nodemon index.js 
+  
+  2) Internet
+    A) go to localhost3000/products
+
+  3) Terminal 
+    A) Should be filled with products 
+
+III) Create Template
+  1) cd views folder 
+    A) mkdir products 
+    B) cd products
+      i) touch index.ejs 
+
+  2) index.ejs 
+    A) Add standard html template 
+
+  3) index.js 
+    A) remove 
+    console.log(products);
+    res.send("All products will be here");
+    B) Add 
+  
+res.render("products/index", { products });
+
+  4) index.ejs
+    A) add 
+
+    <h1>All products</h1>
+    <ul>
+        <% for(let product of products) { %> 
+            <li><%= product.name%></li>
+        <% } %> 
+    </ul>
+
+IV) Check our results 
+  1) go back to localhost3000/products 
+    A) Our products should be displayed in a ul

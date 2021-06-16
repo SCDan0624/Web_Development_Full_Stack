@@ -1,0 +1,18 @@
+I) Password needed in route 
+  1) Add 
+
+    app.use((req, res) => {
+  const { password } = req.query;
+  if (password === "chickennugget") {
+    next();
+  }
+  res.send("Sorry you need a password");
+});
+
+2) Will only work if ?password="chickennugget" is after the address
+
+3) Add 
+
+app.get("/secret", (req, res) => {
+  res.send("My Secret is ....");
+});

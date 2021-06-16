@@ -1,0 +1,50 @@
+I) Setup 
+    1) mkdir YelpCamp 
+    2) cd YelpCamp 
+    3) npm init -y (skips questions)
+    4) npm i express mongoose ejs
+    5) touch app.js (could also be named index.js)
+
+II) app.js
+    1) Add the following
+
+const express = require("express");
+const app = express();
+
+app.get("/", (req, res) => {
+  res.send("Hello from yelp camp");
+});
+
+app.listen(3000, () => {
+  console.log("APP IS LISTENING ON PORT 3000!!");
+});
+
+III) Terminal 
+    1) node.app.js
+    2) localhost:3000 in browser 
+        A) Hello from yelp camp will be displayed 
+
+
+IV) Views 
+    1) Create views folder
+        A) Inside view folder create home.ejs and fill out.
+            i) This will be used to quick test our views route
+
+V) app.js 
+    1) Add view routes 
+
+const path = require("path");
+
+app.set("views", path.join(__dirname, "views"));
+app.set("view engine", "ejs");
+
+    2) Change home route 
+
+app.get("/", (req, res) => {
+  res.render("home");
+});
+
+
+VI) Test 
+    1) node app.js 
+    2) localhost:3000

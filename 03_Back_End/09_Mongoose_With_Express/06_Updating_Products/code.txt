@@ -1,0 +1,102 @@
+I) Create a Route 
+    1) index.js 
+        A) add 
+
+app.get("/products/:id/edit", async (req, res) => {
+  const { id } = req.params;
+  const product = await Product.findById(id);
+  res.render("products/edit", { product });
+});
+
+            i){product} means we are passing that variable
+            through to products/edit
+
+II) Make a form 
+    1) edit.ejs (create)
+        A) Copy our previous new form 
+        B) Change title and h1 tags to edit a product 
+        C) Change form action to 
+
+<form action="/products/<%=product._id %> 
+
+        D) Change input type to add a value 
+
+<input type="text" name="name" id="name" placeholder="product name"value="<%=product.name %> ">
+
+III) Test 
+    1) nodemon index.js
+    2) Go to localhost3000/products
+    3) Click on product 
+    4) Add /edit to the end of the URL 
+    5) An edit a product form should show up 
+
+IV) Form edit 
+    1) edit.ejs 
+        A) Add value to this line to form 
+
+<input type="number" name="price" id="price" placeholder="product price" value="<%=product.price %> ">
+
+        B) Price will now show up on the localhost3000/products/edit page 
+
+V) Create submit route 
+    1) Note 
+        A) PUT request will change everything 
+        B) PATCH request will change parts of something 
+        C) Our form will be a POST request but then we will use 
+        method override to allow PUT request
+
+    2) index.js
+        A) Add 
+
+const methodOverride = require("method-override");
+app.use(methodOverride("_method"));
+
+        B) Add
+
+
+app.put("/products/:id", async (req, res) => {
+  console.log(req.body)
+  res.send("PUT!!");
+});
+
+VI) Terminal 
+    1) npm i method-override
+    2) nodemon index.js 
+
+VII) Form change 
+    1) edit.ejs 
+        A) Change form action to: 
+
+<form action="/products/<%=product._id%>?_method=PUT" method="POST">
+
+VIII) Test 
+    1) go to localhost3000/products/id/edit
+    2) Change category of item to dairy and submit 
+        A) PUT!! will be displayed 
+        B) { name: 'Purple Cherry Tomato ', price: '1', category: 'dairy' } will
+        be in terminal 
+
+IX) Route logic 
+    1) index.js 
+        A) Add/Edit 
+
+app.put("/products/:id", async (req, res) => {
+  const { id } = req.params;
+  const product = await Product.findByIdAndUpdate(id, req.body, {
+    runValidators: true,
+  });
+  res.redirect(`/products/${product._id}`);
+});
+
+X) Test 
+    1) go to localhost3000/products/id/edit
+    2) Change category of item to dairy and submit 
+
+XI)  Add link to show page and edit page
+    1) show.ejs
+        A) Add 
+
+<a href="/products/<%=product._id%>/edit">Edit Product</a>
+
+    2) edit.ejs 
+        A) Add 

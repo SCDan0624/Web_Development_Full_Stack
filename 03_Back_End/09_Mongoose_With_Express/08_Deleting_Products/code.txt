@@ -1,0 +1,40 @@
+I) Delete Form
+    1) show.ejs 
+        A) Add 
+
+    <form action="/products/<%=product._id%>?_method=DELETE" method="POST">
+        <button>Delete</button>
+    </form>
+
+            i) method override is needed here since we can't normally send DELETE 
+            requests in forms 
+
+II) Delete Route
+    1) index.js 
+        A) Add 
+
+app.delete("/products/:id", async (req, res) => {
+  res.send("You made it!!");
+});
+
+    2) Test
+        A) Go to a product on localhost/3000/products/
+        B) Click on product 
+        C) Hit delete button 
+        D) You made it should appear
+
+    3) index.js 
+        A) Add/edit 
+
+app.delete("/products/:id", async (req, res) => {
+  const { id } = req.params;
+  const deletedProduct = await Product.findByIdAndDelete(id);
+  res.redirect("/products");
+});
+
+III) Full Test 
+    1) Go to products 
+    2) Click on product you want to delete 
+    3) Click on delete button 
+    
+    

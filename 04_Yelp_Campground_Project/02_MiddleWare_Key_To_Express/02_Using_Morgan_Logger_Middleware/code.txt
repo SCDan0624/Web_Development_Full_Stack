@@ -1,0 +1,41 @@
+I) Morgan 
+    1) Helps us log http requests in our terminal
+    2) npm i morgan
+    3) index.js 
+        A) Add 
+
+const express = require("express");
+const app = express();
+
+app.get("/", (req, res) => {
+  res.send("Home Page!!!");
+});
+
+app.get("/dogs", (req, res) => {
+  res.send("Woof!!!");
+});
+
+
+app.listen(3000, () => {
+  console.log("App is running on localhost:3000");
+});
+
+II) Test 
+    1) nodemon index.js
+    2) go to localhost:3000 and localhost:3000/dogs 
+      A) Both pages should display some text
+
+III) Morgan
+  1) app.use()
+    A) Allows us to run code on every single request
+  
+  2) index.js 
+    A) Add 
+
+  const morgan = require("morgan");
+  app.use(morgan("tiny"));
+
+    B)  app.use(morgan("tiny"));
+
+      i) Tells express to run this middleware once per request and
+      move on

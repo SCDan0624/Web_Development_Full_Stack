@@ -1,0 +1,72 @@
+I) Set up
+    1) Make a models folder in our project 
+    2) Create a campground.js file in our models folder
+
+II) campground.js 
+    1) Add 
+
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
+
+const CampgroundSchema = new Schema({
+  title: String,
+  price: String,
+  description: String,
+  location: String,
+});
+
+module.exports = mongoose.model("Campground", CampgroundSchema);
+
+
+III) app.js 
+    1) Add 
+
+const mongoose = require("mongoose");
+
+mongoose.connect("mongodb://localhost:27017/yelp-camp", {
+  useNewUrlParser: true,
+  useCreateIndex: true,
+  useUnifiedTopology: true,
+});
+
+const db = mongoose.connection;
+db.on("error", console.error.bind(console, "connection error:"));
+db.once("open", () => {
+  console.log("Database connected");
+});
+
+IV) Test 
+    1) Check Terminal to see if app connects after node app.js
+    2) app.js 
+        A) Add test route 
+
+V) App.js (We will test making a model)
+    1) Add 
+
+const Campground = require("./models/campground");
+
+app.get("/makecampground", (req, res) => {
+  res.render("home");
+});
+
+
+VI) Test
+    1) http://localhost:3000/makecampground
+        A) The following will be displayed 
+
+{
+_id: "60b42014ce27204cf79b3f60",
+title: "My Backyard",
+description: "cheap camping",
+__v: 0
+}
+
+    2) Terminal 
+        A) go to mongo 
+        B) use yelp-camp
+        C) db.campgrounds.find()
+            i) Same campground object should be in here
+
+VII) What we have done 
+    1) This shows we have successfully connected to our database from 
+    our express app.

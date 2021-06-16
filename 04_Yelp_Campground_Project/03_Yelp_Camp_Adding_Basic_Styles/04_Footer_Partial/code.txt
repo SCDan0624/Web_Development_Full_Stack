@@ -1,0 +1,23 @@
+I) Footer 
+  1) Create a footer.ejs in partial 
+    A) Add to footer.ejs 
+
+<footer class="footer bg-dark py-3">
+    <div class="container">
+        <span class="text-muted">&copy;YelpCamp 2020</span>
+    </div>
+</footer>
+
+  2) boilerplate.ejs
+    A) Add below main
+
+   <%- include('../partials/footer') %>
+
+    B) Change body using bootstrap classes
+
+  <body class="d-flex flex-column vh-100">
+
+  3) footer.ejs 
+    A) Add to force footer to bottom 
+
+  <footer class="footer bg-dark py-3 mt-auto">

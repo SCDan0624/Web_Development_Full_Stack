@@ -1,0 +1,49 @@
+I) What are virtuals 
+  1) They allow us to add properties to a schema that don't exist in the 
+  DB itself.
+
+II) Example 
+  1) Create a person.js file
+  2) person.js
+    A) Add connection data (Keeping shopApp as DB)
+
+const mongoose = require("mongoose");
+
+mongoose
+  .connect("mongodb://localhost:27017/shopApp", {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => {
+    console.log("Connection open!");
+  })
+  .catch((err) => {
+    console.log("Oh no error!!!");
+    console.log(err);
+  });
+
+    B) Add a person schema
+
+const personSchema = new mongoose.schema({
+  first: String,
+  last: String,
+});
+
+    C) Create virtual 
+
+personSchema.virtual("fullName").get(function () {
+  return `${this.first} ${this.last}`;
+});
+
+    D) Create person model 
+
+const Person = mongoose.model("Person", personSchema);
+
+  3) node 
+    A) .load person.js 
+    B) const tammy = new Person({first: "Tammy", last:"Chow"})
+    C) tammy.fullName 
+      i) 'Tammy Chow'
+
+  4) Note 
+    A) virtuals are not stored in the DB

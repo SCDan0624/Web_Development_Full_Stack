@@ -1,0 +1,41 @@
+I) Start-Up Steps
+    1) mkdir Templating_Demo, cd Templating_Demo
+    2) npm init -y
+    3) npm i express
+    4) npmi ejs
+    5) npm i method-override
+    6) npm install uuid
+    7) touch index.js
+    8) nodemon index.js (to run server )
+    9) mkdir views 
+
+II) Index.js
+    1) Required at the top 
+        const express = require("express");
+        const app = express();
+        const path = require("path");
+        const { v4: uuid } = require("uuid");
+        const methodOverride = require("method-override");
+
+        app.use(express.urlencoded({ extended: true }));
+        app.use(express.json());
+        app.use(methodOverride("_method"));
+        app.set("view engine", "ejs");
+        app.set("views", path.join(__dirname, "views"));
+    
+    2) Setting pages
+        A) Render home page in views folder
+        
+        app.get("/", (req, res) => {
+            res.render("home");
+        });
+
+
+    2) Optional for the rest of the page
+    
+        app.listen(3000, () => {
+            console.log("Listening on port 3000");
+        });
+
+III) Views folder 
+    1) ejs files will go in here. For example home.ejs

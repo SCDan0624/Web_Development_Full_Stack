@@ -1,0 +1,15 @@
+I) Express Middleware
+    1) Functions that run during the request/response 
+    lifecycle.
+    2) Examples 
+        A) Parsing the body 
+        B) Serve static files 
+
+II) Middleware 
+    1) Middleware are just functions 
+    2) Each middleware has access to the request and 
+    response objects 
+    3) Middleware can end the HTTP request by sending back
+    a response with methods like res.send()
+    4) OR middleware can be chained together, one after the
+    other by calling next()

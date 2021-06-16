@@ -1,0 +1,151 @@
+I) Building a farm stand app 
+II) Making a models directory 
+  1) mkdir models in Mongoose_Express
+  2) touch product.js inside models
+  3) product.js
+    A) Add: 
+
+const mongoose = require("mongoose"); 
+
+const productSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: true,
+  },
+  price: {
+    type: Number,
+    required: true,
+    min: 0,
+  },
+  category: {
+    type: String,
+    enum: ["fruit", "vegetable", "dairy"],
+  },
+});
+
+const Product = mongoose.model("Product", productSchema);
+
+module.exports = Product;
+
+
+  4) index.js 
+    A) edit 
+
+.connect("mongodb://localhost:27017/farmStand", {
+
+    B) Add 
+
+const Product = require("./models/product");
+
+  5) seeds.js (Used to seed your DB)
+    A) Create seeds.js file
+
+    B) Add 
+
+const mongoose = require("mongoose");
+
+const Product = require("./models/product");
+
+mongoose
+  .connect("mongodb://localhost:27017/farmStand", {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => {
+    console.log("Mongo Connection open!");
+  })
+  .catch((err) => {
+    console.log("Oh no Mongo error!!!");
+    console.log(err);
+  });
+
+    C) Add 
+
+  const p = new Product({
+  name: "Ruby Grapefruit",
+  price: 1.99,
+  category: "fruit",
+});
+
+  6) product.js 
+    A) edit productSchema 
+  
+  category: {
+    type: String,
+    lowercase: true,
+    enum: ["fruit", "vegetable", "dairy"],
+  },
+
+  7) seeds.js 
+    A) Add 
+
+p.save()
+  .then((p) => {
+    console.log(p);
+  })
+  .catch((e) => {
+    console.log(e);
+  });
+
+
+III) Testing if model creation worked 
+  1) Terminal 
+    A) node seeds.js 
+  
+  2) Another Terminal 
+    A) mongo 
+    B) show dbs 
+    C) use farmStand 
+    D) show collections 
+      i) products will be displayed 
+    E) db.products.find()
+      i) Your Ruby Grapefruit will be shown
+
+IV) Make more products quickly 
+  1) comment out p variable and save 
+  2) seeds.js 
+    A) Add 
+
+const seedProducts = [
+  {
+    name: "Fairy Eggplant",
+    price: 1.0,
+    category: "vegetable",
+  },
+  {
+    name: "Organic Goddess Melon",
+    price: 4.99,
+    category: "fruit",
+  },
+  {
+    name: "Organic Mini Seedless Watermelon",
+    price: 3.99,
+    category: "fruit",
+  },
+  {
+    name: "Organic Celery",
+    price: 1.5,
+    category: "vegetable",
+  },
+  {
+    name: "Chocolate Whole Milk",
+    price: 2.69,
+    category: "dairy",
+  },
+];
+
+Product.insertMany(seedProducts)
+  .then((res) => {
+    console.log(res);
+  })
+  .catch((e) => {
+    console.log(e);
+  });
+
+
+  3) node 
+    A) node seeds.js
+  
+  4) mongo 
+    A) db.products.find()
+      i) All instances should show up

@@ -1,0 +1,116 @@
+I) What we are going to do in this section
+  1) Set up some fake campground data
+
+II) Set-up 
+  1) Create a seeds folder
+  2) Create a cities.js file 
+    A) Copy data from Colts file to this file
+    B) Put in seeds folder
+  3) Create a seedHelpers.js file
+    A) Copy data from Colts file to this file
+    B) Put in seeds folder
+  4) Create a index.js file and add to seeds 
+
+III) seeds/index.js 
+  1) Copy the following code from app.js and put into index.js: 
+
+          const mongoose = require("mongoose");
+          const Campground = require("../models/campground");
+          const cities = require("./cities");
+
+          mongoose.connect("mongodb://localhost:27017/yelp-camp", {
+            useNewUrlParser: true,
+            useCreateIndex: true,
+            useUnifiedTopology: true,
+          });
+
+          const db = mongoose.connection;
+
+          db.on("error", console.error.bind(console, "connection error:"));
+          db.once("open", () => {
+            console.log("Database connected");
+          });
+
+  2) Remove everything from within the database 
+    A) Add: 
+  
+            const seedDB = async () => {
+              await Campground.deleteMany({});
+            }
+
+  3) Lets see if we can connect to our database by adding the following:
+
+                const seedDB = async () => {
+                  await Campground.deleteMany({});
+                  const c = new Campground({title:'purple field'});
+                  await c.save();
+                }
+
+                seedDB();
+
+    A) Next go to terminal 
+      i) node seeds/index.js
+      ii) database connected 
+
+    B) In another tab go to mongo 
+      i) use yelp-camp 
+      ii) db.campgrounds.find()
+
+  4) Add loop logic for to seedDB function
+    A) Remove const c and c.save();
+    B) Add 
+
+    for(let i = 0; i < 50; i++){
+      const random1000 = Math.floor(Math.random() * 1000);
+      const camp = new Campground({
+        location: `${cities[random1000].city}, ${cities[random1000].state}`,
+        title: `${sample(descriptors)} ${sample(places)}`,
+      });
+      await camp.save();
+    }
+
+    5) Breakdown of loop  
+      A) Loop through 50 times doing the following: 
+      B) Create a variable with a random num bewteen 1-1000, there 
+      are 1000 cities in cities.js 
+      C) Create a new Campground 
+        i) set location to random city and state 
+        ii) set title to descriptors and place 
+        (We will set add sample variable later)
+      D) save new campground 
+
+IV) Import seedHelpers to index.js
+  1) seedHelpers.js
+    A) Change the name of the array's to 
+      i) module.exports.descriptors
+      ii) module.exports.places
+
+  2) index.js 
+    A) Add to transfer over seedHelpers data 
+
+      const { places, descriptors } = require("./seedHelpers");
+
+V) Complete logic in index.js 
+  1) index.js 
+    A) Add a sample variable 
+  
+  const sample = (array) => array[Math.floor(Math.random() * array.length)];
+
+
+VI) Test 
+  1) Terminal 
+    A) node seeds/index.js
+    B) db.campgrounds.find()
+  2) In another Terminal Tab 
+    A) mongo 
+    B) use yelp-camp
+    C) db.campgrounds.find()
+      i) A ton of campground objects should be displayed
+
+VII) Close our DB connection 
+  1) index.js
+    A) Add 
+
+      seedDB().then(() => {
+        mongoose.connection.close();
+      });

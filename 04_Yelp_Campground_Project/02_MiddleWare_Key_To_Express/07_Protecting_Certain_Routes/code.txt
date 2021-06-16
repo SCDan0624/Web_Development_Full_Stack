@@ -1,0 +1,29 @@
+I) Current issue 
+    1) Every route is protected with our chickennugget password.
+    How do we protect only certain routes 
+
+II) index.js 
+
+    1) Update our app.use to 
+
+const verifyPassword = (req, res, next) => {
+  const { password } = req.query;
+  if (password === "chickennugget") {
+    next();
+  }
+  res.send("Sorry you need a password");
+};
+
+    2) Update our app.get
+
+app.get("/secret", verifyPassword, (req, res) => {
+  res.send("My Secret is ....");
+});
+
+III) Test 
+
+  1) localhost:3000/dogs 
+    A) no protection 
+
+  2) localhost:3000/secrets 
+    A) password protected

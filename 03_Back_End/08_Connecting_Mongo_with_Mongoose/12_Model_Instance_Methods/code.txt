@@ -1,0 +1,71 @@
+I) How to make custom instance methods
+  1) product.js
+    A) Add: 
+
+productSchema.methods.greet = function () {
+  console.log("Hello!!!");
+  console.log(`- from ${this.name}`);
+}; 
+
+  2) node 
+    A) .load product.js 
+    B) const p = new Product({name:"bike bag", price: 10})
+    C) p.greet 
+      i) Should get your console.log from your greet method 
+
+  3) product.js 
+    A) Add
+
+const findProduct = async () => {
+  const foundProduct = await Product.findOne({ name: "Bike Helmet" });
+  foundProduct.greet();
+};
+
+findProduct();
+
+  4) node product.js
+    A) Should get the findProduct method 
+
+  5) product.js 
+    A) Add
+    
+productSchema.methods.toggleOnSale = function () {
+  this.onSale = !this.onSale;
+  return this.save();
+};
+
+  B) Change 
+
+const findProduct = async () => {
+  const foundProduct = await Product.findOne({ name: "Bike Helmet" });
+  console.log(foundProduct);
+  await foundProduct.toggleOnSale();
+  console.log(foundProduct);
+  // foundProduct.greet();
+};
+
+  6) node product.js
+    A) onSale will start as false and then toggle to true
+
+  7) product.js 
+    A) Add 
+
+productSchema.methods.addCategory = function (newCat) {
+  this.categories.push(newCat);
+  return this.save;
+};
+
+    B) Change 
+
+const findProduct = async () => {
+  const foundProduct = await Product.findOne({ name: "Bike Helmet" });
+  console.log(foundProduct);
+  await foundProduct.toggleOnSale();
+  console.log(foundProduct);
+  // foundProduct.greet();
+  await foundProduct.addCategory("Outdoors");
+  console.log(foundProduct)
+};
+
+  8) node 
+    A) node product.js

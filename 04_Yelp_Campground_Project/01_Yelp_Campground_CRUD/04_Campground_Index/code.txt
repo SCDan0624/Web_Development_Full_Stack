@@ -1,0 +1,31 @@
+I) route 
+    1) app.js 
+        A) Remove app.get makecampground
+        B) Add 
+
+            app.get("/campgrounds", async (req, res) => {
+            const campgrounds = await Campground.find({});
+            res.render("campgrounds/index", { campgrounds });
+            });
+
+II) Views 
+    1) create campgrounds folder in views
+    2) create index.ejs in campgrounds folder
+    3) index.ejs    
+        A) Add to the body 
+    
+        <h1>All Campgrounds</h1>
+
+III) Test 
+    1) localhost:3000/campgrounds
+        A) ALL Campgrounds will be displayed
+
+IV) Views 
+    1) index.ejs 
+        A) Add to the body 
+
+            <ul>
+                <% for (let campground of campgrounds){%>
+                    <li><%= campground.title %> </li>
+                <% }%> 
+            </ul>

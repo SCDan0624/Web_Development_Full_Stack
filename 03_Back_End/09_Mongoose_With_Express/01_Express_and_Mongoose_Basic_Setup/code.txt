@@ -1,0 +1,55 @@
+I) Set-Up 
+    1)  mkdir Mongoose_Express
+    2) cd Mongoose_Express
+    3) npm init -y 
+    4) npm i express ejs mongoose
+    5) touch index.js 
+    6) mkdir views 
+
+II) index.js 
+    1) Add the following 
+
+const express = require("express");
+const app = express();
+const path = require("path");
+
+app.set("views", path.join(__dirname, "views"));
+app.set("view engine", "ejs");
+
+app.listen(3000, () => {
+  console.log("APP IS LISTENING ON PORT 3000!!");
+});
+
+    2) nodemon index.js in terminal 
+
+    3) Add a route to index.js 
+
+app.get("/dog", (req, res) => {
+  res.send("WOOF!");
+});
+
+    4) Go to browser and localhost 3000/dog
+        A) WOOF! should be displayed 
+
+III) index.js 
+    1) Add the following Mongo logic 
+
+const mongoose = require("mongoose");
+
+mongoose
+  .connect("mongodb://localhost:27017/shopApp", {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => {
+    console.log("Mongo Connection open!");
+  })
+  .catch((err) => {
+    console.log("Oh no Mongo error!!!");
+    console.log(err);
+  });
+
+
+    2) Terminal 
+        A) Go back to terminal with nodemon still running 
+        B) Mongo connection open will be displayed 

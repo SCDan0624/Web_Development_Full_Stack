@@ -1,0 +1,28 @@
+I) More middleware practice 
+  1) index.js 
+    A) Add 
+
+app.use((req, res, next) => {
+  req.requestTime = Date.now();
+  console.log(req.method, req.path);
+  next();
+});
+
+  B) Change 
+
+app.get("/", (req, res) => {
+  console.log(`Request date: ${req.requestTime}`);
+  res.send("Home Page!!!");
+});
+
+app.get("/dogs", (req, res) => {
+  console.log(`Request date: ${req.requestTime}`);
+  res.send("Woof!!!");
+});
+
+  C) Comment out 
+
+// app.use((req, res, next) => {
+//   console.log("This is my first middleware");
+//   next();
+// });

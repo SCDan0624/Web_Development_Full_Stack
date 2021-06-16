@@ -1,0 +1,16 @@
+I) Create our own middleware
+  1) index.js 
+    A) Add 
+
+app.use((req, res, next) => {
+  console.log("This is my first middleware");
+  next();
+});
+
+  B) Note 
+    i) By adding return next() you guarentee no code in that 
+    specific app.use will be run.
+
+II) Test 
+  1) localhost:3000/dogs 
+    A) Our console.log will show up in the terminal only. 

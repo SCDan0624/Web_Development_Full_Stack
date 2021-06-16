@@ -1,0 +1,73 @@
+I) What we are doing 
+    1) In this lesson we are trying to get the 
+    edit page to correctly display the category and not default to 
+    one category.
+
+II) Edit Form (This will be changed later)
+    1) edit.ejs 
+        A) Edit option line 
+
+<option value="fruit" <%= product.category === 'fruit' ? 'selected': '' %> >fruit</option>
+<option value="vegetable"  <%= product.category === 'vegetable' ? 'selected': '' %>>vegetable</option>
+<option value="dairy" <%= product.category === 'dairy' ? 'selected': '' %>>dairy</option>
+
+
+III) Edit Route 
+    1) index.js 
+        A) Add 
+
+const categories = ["fruit", "vegetable", "dairy"];
+
+        B) edit 
+
+app.get("/products/new", (req, res) => {
+  res.render("products/new", { categories });
+});
+
+IV) Edit Form with loop 
+    1) new.ejs 
+        A) Add loop to select 
+
+        <select name="category" id="category">
+            <% for (let category of categories){ %> 
+                <option value="<%=category%>"><%=category%></option>
+            <% } %> 
+            <option value="fruit">fruit</option>
+            <option value="vegetable">vegetable</option>
+            <option value="dairy">dairy</option>
+        </select>
+
+        B) This should dynamically mdisplay our three options and gives us the 
+        value of those three option dynamically.
+
+V) Test
+    1) localhost3000/products/new
+        A) select category
+        B) inspect page 
+        C) The 3 options will be available when you inspect. 
+
+VI) Edit form with loop    
+    1) edit.ejs 
+        A) Add loop to select 
+
+        <select name="category" id="category">
+            <% for (let category of categories){ %> 
+                <option value="<%=category%>"><%=category%></option>
+            <% } %> 
+        </select>
+
+VII) Change edit route 
+    1) index.js 
+        A) Add categories as a passthrough 
+
+app.get("/products/:id/edit", async (req, res) => {
+  const { id } = req.params;
+  const product = await Product.findById(id);
+  res.render("products/edit", { product, categories });
+});
+
+
+// Side code 
+            <% for (let category of categories){ %> 
+                <option value="<%=category%>"<%= product.category === category ? 'selected' : '' %>><%=category%></option>
+            <% } %> 

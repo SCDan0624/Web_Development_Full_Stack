@@ -1,0 +1,49 @@
+I) Route 
+    1) app.js
+        A) Add 
+
+        app.get("/campgrounds/:id", async (req, res) => {
+        res.render("campgrounds/show");
+        });
+
+
+II) Views 
+    1) Create show.ejs in views/campgrounds folder
+    2) show.ejs 
+        A) Add to body 
+
+            <h1>Campground show</h1>
+
+III) Test 
+    1) Terminal 
+        A) node app.js 
+        B) localhost:3000/campgrounds/asde
+            i) our h1 should show up
+
+IV) Views 
+    1)index.ejs 
+        A) Change our li tag to the following 
+
+   <li><a href="/campgrounds/<%= campground._id %>"><%= campground.title %></a></li>
+
+        
+V) Routes 
+    1) app.js 
+        A) Add to our route 
+
+        app.get("/campgrounds/:id", async (req, res) => {
+            const campground = await Campground.findById(req.params.id);
+            res.render("campgrounds/show", { campground });
+        });
+
+VI) Views 
+    1) show.ejs 
+        A) add to the body 
+
+            <h1><%= campground.title %></h1>
+            <h2><%= campground.location %></h2>
+
+VII) Test 
+    1) go to localhost:3000/campgrounds 
+    2) click on link 
+        A) title and location should show up

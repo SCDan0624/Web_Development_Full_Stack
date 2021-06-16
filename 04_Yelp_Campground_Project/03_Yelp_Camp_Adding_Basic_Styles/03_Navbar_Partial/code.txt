@@ -1,0 +1,54 @@
+I) Navbar 
+    1) Go to bootstrap.com -> components -> Navbar
+    2) boilerplate.ejs 
+        A) Add above main container
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link active" aria-current="page" href="#">Home</a>
+        <a class="nav-link" href="#">Features</a>
+        <a class="nav-link" href="#">Pricing</a>
+        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+    B) Adjustments 
+        i) change to dark and make sticky 
+
+    <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+
+        ii) Rename brand 
+    
+    <a class="navbar-brand" href="#">YelpCamp</a>
+
+        iii) Change links 
+
+            <div class="navbar-nav">
+              <a class="nav-link" href="/">Home</a>
+              <a class="nav-link" href="/campgrounds">Campgrounds</a>
+              <a class="nav-link" href="/campgrounds/new">New Campground</a>
+            </div>
+
+        iv) Add margin 
+
+            <main class="container mt-5">
+                <%-  body   %> 
+            </main>
+
+II) Partials 
+    1) Create a new partials folder in views
+    2) Create a navbar.ejs to partials folder
+    3) Cut navbar from boilerplate.ejs and add to navbar.ejs
+    4) boilerplate.ejs
+        A) Add 
+
+    <%- include('../partials/navbar') %> 
+

@@ -1,0 +1,15 @@
+I) What are static methods
+  1) They are methods that live on the model itself and not instances of 
+  that model
+
+II) Example
+  2) product.js
+    A) Add 
+
+productSchema.statics.fireSale = function () {
+  return this.updateMany({}, { onSale: true, price: 0 });
+};
+
+Product.fireSale().then(res => console.log(res))
+
+  3) node product.js

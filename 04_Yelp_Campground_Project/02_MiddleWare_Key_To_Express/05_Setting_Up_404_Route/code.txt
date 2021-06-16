@@ -1,0 +1,18 @@
+I) Route 
+  1) index.js 
+    A) Add a middleware that only works on /dogs 
+
+app.use("/dogs", (req, res, next) => {
+  console.log("I love dogs!!");
+  next();
+});
+
+II) 404 route
+  1) Will be used if no other route containing an ending res (such as 
+  res.send) is being used
+
+    A) Add 
+
+app.use((req, res) => {
+  res.status(404).send("Not Found!");
+});

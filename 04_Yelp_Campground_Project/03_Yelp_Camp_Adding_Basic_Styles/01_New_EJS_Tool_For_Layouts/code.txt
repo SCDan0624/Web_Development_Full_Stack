@@ -1,0 +1,51 @@
+I) EJS mate 
+    1) Allows us to add EJS functionality such as layout 
+    2) Installation in terminal 
+        A) npm i ejs-mate 
+
+II) Route 
+    1) app.js   
+        A) add 
+const ejsMate = require("ejs-mate");
+
+app.engine("ejs", ejsMate);
+
+III) Views 
+    1) Create layouts folder in views 
+        A) Add boilerplate.ejs inside layout
+            i) This will be the basic boilerplate for 
+            every single page
+   
+    2) boilerplate.ejs
+        A) Add 
+
+    <h1>Before</h1>
+    <%-  body   %> 
+    <h1>After</h1>
+
+    3) campgrounds/index.ejs 
+        A) Update entire page 
+
+    <% layout('layouts/boilerplate') %> 
+    <h1>All Campgrounds</h1>
+    <div>
+        <a href="campgrounds/new">Add Campground</a>
+    </div>
+    <ul>
+        <% for (let campground of campgrounds){%>
+            <li><a href="/campgrounds/<%= campground._id %>"><%= campground.title %></a></li>
+        <% }%> 
+    </ul>
+
+        4) Do the same thing for edit, new, show.ejs
+
+
+    
+
+IV) Test 
+    1) Go to each page and there should be a before on top
+    and after on bottom
+
+V) Tidy up 
+    1) boilerplate.ejs 
+        A) Remove before and after

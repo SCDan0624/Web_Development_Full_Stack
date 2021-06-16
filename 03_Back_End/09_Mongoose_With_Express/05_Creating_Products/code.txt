@@ -1,0 +1,78 @@
+I) How to make new products 
+    1) We need a form to fill out 
+    2) We need a route to submit product 
+
+II) Make routes 
+    1) index.js 
+        A) Add 
+
+app.get("/products/new", (req, res) => {
+  res.render("products/new");
+});
+
+III) Make form 
+    1) views/products/new.ejs (create this)
+        A) Add in body 
+
+    <h1>Add a Product</h1>
+    <form action="/products" method="POST">
+        <label for="name">Product Name</label>
+        <input type="text" name="name" id="name" placeholder="product name">
+        <label for="price">Product Price</label>
+        <input type="number" name="price" id="price" placeholder="product name">
+        <label for="category">Select Category</label>
+        <select name="category" id="category">
+            <option value="fruit">fruit</option>
+            <option value="vegetable">vegetable</option>
+            <option value="dairy">dairy</option>
+        </select>
+        <button>Submit</button>
+    </form>
+
+
+IV) Make a route for submit 
+    1) index.js 
+        A) Add 
+
+app.use(express.urlencoded({ extended: true }));
+
+            i)this allow us to get information from post.body by 
+            using middleware
+
+    2) index.js 
+        A) Add the following to test if it works 
+
+app.post("/products", (req, res) => {
+  console.log(req.body);
+  res.send("Making your product");
+});
+
+V) Testing 
+    1) Go to localhost:3000/products/new 
+        A) Fill out information and hit submit 
+            i) Making your product should appear 
+            ii) in terminal the product will be shown
+
+VI) Finish new product route 
+    1) index.js 
+        A) Add/edit 
+
+app.post("/products", async (req, res) => {
+  const newProduct = new Product(req.body);
+  await newProduct.save();
+  console.log(newProduct);
+  res.send("Making your product");
+});
+
+    2) Test again using steps in "V)testing"
+
+    3) index.js 
+        A) Add/edit
+
+app.post("/products", async (req, res) => {
+  const newProduct = new Product(req.body);
+  await newProduct.save();
+  res.redirect(`/products/${newProduct._id}`);
+});
+
+    4) Test again

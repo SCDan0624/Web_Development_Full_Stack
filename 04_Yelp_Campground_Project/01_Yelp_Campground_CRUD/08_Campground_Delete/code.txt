@@ -1,0 +1,22 @@
+I) Route 
+    1) app.js 
+        A) Add 
+
+        app.delete("/campgrounds/:id", async (req, res) => {
+        const { id } = req.params;
+        await Campground.findByIdAndDelete(id);
+        res.redirect("campgrounds");
+        });
+
+II) Form 
+    1) views/campgrounds/show.ejs
+        A) Add 
+
+    <p>
+        <form action="/campgrounds/<%= campground._id %>?_method=DELETE" method="POST">
+            <button>Delete</button>
+        </form>
+    </p>
+
+III) Test 
+    1) Click on campground and press delete button

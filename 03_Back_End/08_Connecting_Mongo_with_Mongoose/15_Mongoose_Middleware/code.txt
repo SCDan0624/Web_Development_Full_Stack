@@ -1,0 +1,23 @@
+I) What is mongoose middleware
+  1) Allows us to add pre and post method actions
+
+II) Example
+  1) person.js 
+    A) Add 
+  
+personSchema.pre("save", async function () {
+  console.log("About to Save!!!");
+});
+
+personSchema.post("save", async function () {
+  console.log("Just Saved!!!");
+});
+
+
+  2) node 
+    A) .load person.js 
+    B) const k = new person({first:"Kristen", last:"Sun"})
+    C) k.save()
+      i) About to Save!!
+      ii) Promise 
+      iii) Just Saved!!
