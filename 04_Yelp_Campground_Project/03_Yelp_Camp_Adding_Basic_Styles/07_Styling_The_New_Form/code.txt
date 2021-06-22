@@ -1,0 +1,65 @@
+I) Bootstrap our form 
+    1) new.ejs 
+        A) ADD (This will center our form)
+
+ <div class="row">
+        <h1 class="text-center">New Campground</h1>
+        <div class="col-6 offset-3">
+
+        </div>
+ </div>
+
+        B) Paste our form inside this div 
+
+II) Bootstrap our form continued 
+    1) new.ejs
+        A) Add specific classes to our label and input 
+
+<label class="form-label" for="title">Title</label>
+<input class="form-control" type="text" id="title" name="campground[title]">
+
+        B) Do the same for our location part of the form 
+
+<label class="form-label" for="location">Location</label>
+<input class="form-control" type="text" id="location" name="campground[location]">
+
+        C) Add some margin bottom to the divs holding title and location 
+
+        <div class="mb-3">
+
+        D) Add a new div for button and add some margin button.
+        E) Style button with Bootstrap 
+
+                <div class="mb-3">
+                    <button class="btn btn-success">Add Campground</button>
+                </div>
+
+III) Create new fields for our form 
+    1) new.ejs  
+        A) Add image form: 
+
+                <div class="mb-3">
+                    <label class="form-label" for="image">Image URL</label>
+                    <input class="form-control" type="text" id="image" name="campground[image]">
+                </div>
+        
+        B) Add description form 
+
+                <div class="mb-3">
+                    <label class="form-label" for="description">Description</label>
+                    <textarea class="form-control" type="text" id="description" name="campground[description]"></textarea>
+                </div>
+        
+        C) Add price form 
+
+            <div class="mb-3">
+                <label class="form-label" for="price">Campground Price</label>
+                <div class="input-group">
+                    <span class="input-group-text" id="price-label">$</span>
+                    <input type="text" class="form-control" id="price" placeholder="0.00" aria-label="price"
+                        aria-describedby="price-label" name="campground[price]">
+                </div>
+            </div>
+
+IV) Test 
+    1) Fill out form 

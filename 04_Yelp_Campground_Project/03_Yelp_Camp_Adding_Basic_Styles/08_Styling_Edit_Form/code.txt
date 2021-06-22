@@ -1,0 +1,34 @@
+I) Style our edit page 
+    1) edit.ejs 
+        A) Copy new.ejs page and add to edit.ejs 
+
+II) Changes for our edit page 
+    1) edit.ejs 
+        A) Change form header 
+
+        <form action="/campgrounds/<%=campground._id%>?_method=PUT" method="POST">
+
+        B) Add value to input class 
+
+        value="<%=campground.title %>">
+        value="<%=campground.location %>">
+        value="<%=campground.image %>">
+        value="<%=campground.price %>">
+
+        C) Change text area to include value (without value attribute)
+
+                <textarea class="form-control" type="text" id="description"
+                    name="campground[description]"><%= campground.description%>
+                </textarea>
+
+        D) Update button 
+
+        <button class="btn btn-info">Update Campground</button>
+
+        E) Update link to go back to campground 
+
+        <a href="/campgrounds/<%= campground._id%>">Back To Campground</a>
+
+III) Test 
+    1) Fill out form
+        A) Click update campground button once form is updated
